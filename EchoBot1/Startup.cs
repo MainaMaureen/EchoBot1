@@ -44,12 +44,12 @@ namespace EchoBot1
         public void ConfigureState(IServiceCollection services)
         {
             //Create the storage we will be using for the User and Conversation state. (Memory is great for testing purposes.)
-            services.AddSingleton<IStorage, MemoryStorage>();
+            // services.AddSingleton<IStorage, MemoryStorage>();
 
             //Saving data to Azure Blob Storage
-            // var storageAccount = " DefaultEndpointsProtocol = https; AccountName = feedbackbot; AccountKey = TsaBvz71bAiHUwKYluMWyHCMAO03zTxlxORONZWw3OxETbHEbMd3lvbc3yarVg9FjPQscRQFKxjF + zZfJq8RxQ ==; EndpointSuffix = core.windows.net " ;
-            // var storageContainer = " mystatedata " ;
-            // services.AddSingleton<IStorage>(new AzureBlobStorage(storageAccount, storageContainer));
+            var storageAccount = "DefaultEndpointsProtocol=https;AccountName=feedbackbot;AccountKey=zdYldjRDkzAG33x3/JiObsyq8u6YKPr2SIDmucAuIo/VGwK/NYKw3acYL5eD4xLdfAwyRVdNDNlFTMv+oa8rAA==;EndpointSuffix=core.windows.net";
+             var storageContainer = "mystatedata";
+             services.AddSingleton<IStorage>(new AzureBlobStorage(storageAccount, storageContainer));
 
             //Create the User state.
             services.AddSingleton<UserState>();
