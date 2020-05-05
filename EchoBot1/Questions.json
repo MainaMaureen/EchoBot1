@@ -56,7 +56,7 @@
   {
     "question": {
       "eng": "Thank you very much for your feedback. We appreciate your support. Please choose from (1.MAIN MENU) to continue using the service.",
-      "sw": " Asante sana kwa maoni yako. Tunakushukuru kw kutuunga mkono. Tafadhali chagua (1.MAIN MENU) kuendelea kutumia huduma yetu. ",
+      "sw": " Asante sana kwa maoni yako. Tunakushukuru kw kutuunga mkono. Tafadhali chagua (1.MAIN MENU) kuendelea kutumia huduma yetu. "
     },
     "choices": {
       "eng": [ "MAIN MENU" ],
