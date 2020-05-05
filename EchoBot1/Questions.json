@@ -1,0 +1,69 @@
+[
+  {
+    "question": {
+      "eng": "How useful was the information or service you received? Please choose (1.USEFUL,) (2.NOT USEFUL) ",
+      "sw": " Je, ulionaje huduma yetu? Tafadhali chagua: (1.MUHIMU,) (2.SIO MUHIMU)"
+    },
+    "choices": {
+      "eng": [ "USEFUL", "NOT USEFUL" ],
+      "sw": [ "MUHIMU", "SIO MUHIMU" ]
+      //Choice prompt for response
+    }
+  },
+  {
+    "question": {
+      "eng": " Okay. What information or service  would you want us to provide. Please type your response:",
+      "sw": " Sawa. Je! Ungetaka tutoe habari gani au huduma gani? Tafadhali andika majibu yako:"
+      //Text prompt for response
+    }
+  },
+  {
+    "question": {
+      "eng": "Well noted. How easy was it for you to access the information you required? Please choose (1.EASY,) (2.HARD) ",
+      "sw": " Imebainika vizuri. Je, ilikuwa rahisi kwako kupata habari uliyohitaji? Tafadhali chagua: (1.RAHISI 2.SIO RAHISI)"
+    },
+    "choices": {
+      "eng": [ "EASY", "HARD" ],
+      "sw": [ "RAHISI", "SIO RAHISI" ]
+      //Choice prompt for response
+    }
+  },
+  {
+    "question": {
+      "eng": " You're almost done! How can i make it easier? Please type your response:",
+      "sw": " Uko karibu kumaliza! Ninawezaje kuifanya iwe rahisi? Tafadhali andika majibu yako:"
+      //Text prompt for response
+    }
+  },
+  {
+    "question": {
+      "eng": "Thank you. How would you rate your overall experience with our services? Please choose (1.EXCELLENT,) (2.POOR) ",
+      "sw": " Imebainika vizuri. Je, ilikuwa rahisi kwako kupata habari uliyohitaji? Tafadhali chagua: (1.BORA 2.MBAYA)"
+    },
+    "choices": {
+      "eng": [ "EXCELLENT", "POOR" ],
+      "sw": [ "BORA", "MBAYA" ]
+      //Choice prompt for response
+    }
+  },
+  {
+    "question": {
+      "eng": " Lastly, how can i make our experience better? Please type your response:",
+      "sw": " Mwishowe, ninawezaje kufanya uzoefu wetu kuwa bora?? Tafadhali andika majibu yako: "
+      //Text prompt for response
+    }
+  },
+  {
+    "question": {
+      "eng": "Thank you very much for your feedback. We appreciate your support. Please choose from (1.MAIN MENU) to continue using the service.",
+      "sw": " Asante sana kwa maoni yako. Tunakushukuru kw kutuunga mkono. Tafadhali chagua (1.MAIN MENU) kuendelea kutumia huduma yetu. ",
+    },
+    "choices": {
+      "eng": [ "MAIN MENU" ],
+      "sw": [ "MAIN MENU" ]
+    }
+  }
+]
+
+
+    
