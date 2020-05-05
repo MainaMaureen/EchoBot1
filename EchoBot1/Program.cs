@@ -22,7 +22,7 @@ namespace EchoBot1
                                               {
                                                   logging.AddDebug();
                                                   logging.AddConsole();
-                                              })
+                                              } )
                 .UseStartup<Startup>();
     }
 }

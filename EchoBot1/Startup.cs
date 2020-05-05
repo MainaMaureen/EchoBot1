@@ -9,13 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
-using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using EchoBot1.Bots;
-using EchoBot1.Dialogs;
-using EchoBot1. Services;
+using EchoBot1.Services;
 
 namespace EchoBot1
 {
@@ -39,11 +37,8 @@ namespace EchoBot1
             //Configure State
             ConfigureState(services);
 
-            //Configure Dialogs
-            ConfigureDialogs(services);
-
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, DialogBot<MainDialog>>();
+            services.AddTransient<IBot, FeedbackBot>();
         }
 
         public void ConfigureState(IServiceCollection services)
@@ -64,11 +59,6 @@ namespace EchoBot1
 
             //Create an instance of the state service.
             services.AddSingleton<BotStateService>();
-        }
-
-        public void ConfigureDialogs(IServiceCollection services)
-        {
-            services.AddSingleton<MainDialog>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
