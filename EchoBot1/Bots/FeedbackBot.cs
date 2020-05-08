@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace EchoBot1.Bots
 {
     public class FeedbackBot : ActivityHandler
@@ -20,6 +21,15 @@ namespace EchoBot1.Bots
         }
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
+            try
+            {
+                var content = new JsonReader().Index();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
             await GetName(turnContext, cancellationToken);
         }
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
@@ -38,7 +48,9 @@ namespace EchoBot1.Bots
             ConversationData conversationData = await _botStateService.ConversationDataAccessor.GetAsync(turnContext, () => new ConversationData());
             if (!string.IsNullOrEmpty(userProfile.Name))
             {
-                await turnContext.SendActivityAsync(MessageFactory.Text(String.Format("Hi  {0}.  How can i help you today?", userProfile.Name)), cancellationToken);
+                await turnContext.SendActivityAsync(MessageFactory.Text(String.Format("Hi  {0}.  Welcome back to our Feedback Feature. Please take time to answer the provided questions regarding our services, to enable us to serve you better.", userProfile.Name)), cancellationToken);
+                //Prompt the first question <from the json array>
+                await turnContext.SendActivityAsync(MessageFactory.Text(String.Format("**This should be the first question** How useful was the information or service you received? Please choose (1.USEFUL,) (2.NOT USEFUL)", cancellationToken)));
             }
             else
             {
@@ -47,9 +59,11 @@ namespace EchoBot1.Bots
                     //Set the name to what user provided. 
                     userProfile.Name = turnContext.Activity.Text?.Trim();
 
-                    //Acknowledge that we got their name.
-                    await turnContext.SendActivityAsync(MessageFactory.Text(String.Format("Hello  {0}.  Welcome to our Feedback Feature. Please take time to answer the provided questions regarding our services, to enable us to serve you better.", userProfile.Name)), cancellationToken);
-
+                    //Acknowledge that we got their name and provide brief intoduction to the feature
+                    await turnContext.SendActivityAsync(MessageFactory.Text(String.Format("Hello  {0}.  Welcome to our Feedback Feature(1st time user). Please take time to answer the provided questions regarding our services, to enable us to serve you better.", userProfile.Name)), cancellationToken);
+                    //Prompt the first question <from the json array>
+                    await turnContext.SendActivityAsync(MessageFactory.Text(String.Format("**This should be the first question** How useful was the information or service you received? Please choose (1.USEFUL,) (2.NOT USEFUL)", cancellationToken)));
+                    
                     //Reset the flag to allow the bot to go through the cycle again.
                     conversationData.PromptedUserForName = false;
                 }
