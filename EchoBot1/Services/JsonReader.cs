@@ -30,3 +30,7 @@ namespace EchoBot1.Services
         }
     }
 }
+
+//stepContext.Values["description"]  =  (string)stepContext.Result;     --//stepContext is an object where values in that conversation are saved to.(it is NOT saved in state)
+
+    

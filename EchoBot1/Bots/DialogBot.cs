@@ -23,7 +23,7 @@ namespace EchoBot1.Bots
             _dialog = dialog ?? throw new System.ArgumentNullException(nameof(dialog));
             _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
         }
-        public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken))
+        public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default(CancellationToken)) //Bot starts up empty and awaits user input, which can be 'hi'
         {
             await base.OnTurnAsync(turnContext, cancellationToken);
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EchoBot1.Bots
 {
-    public class FeedbackBot : ActivityHandler
+    public class FeedbackBot : ActivityHandler  
     {
         #region Variables
         private readonly BotStateService _botStateService;
