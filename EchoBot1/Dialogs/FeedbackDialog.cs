@@ -18,8 +18,3 @@ namespace EchoBot1.Dialogs
 
 
 
-
-
-//public List<FeedbackDialog> FeedbackDialog { get;   set;}
-
-//var FeedbackDialog = new JavaScriptSerializer().Deserialize<FeedbackDialog>(feedback);
